@@ -1,0 +1,59 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div class="box">
+        <input type="text" v-model="task" />
+        <button
+          @click="addTask"
+          :style="{'opacity': !task ?'.2':'1'}"
+          class="btn"
+        >
+          Add
+        </button>
+        <button class="delAll" @click="tasks = []" v-if="tasks.length> 1">
+          Delete All
+        </button>
+        <div
+          v-for="(task ,index) in tasks"
+          @click="task.done = !task.done"
+          :style="{'background-color': task.done ? '#02ff0024' : '' }"
+          class="tasks"
+        >
+          <p>{{task.words}}</p>
+          <span @click="deleteTask">X</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#container",
+        data: {
+          task: "",
+          tasks: [],
+        },
+        methods: {
+          deleteTask: (e) => {
+            e.target.parentElement.remove();
+          },
+          addTask: function () {
+            if (this.task != "") {
+              this.tasks.push({ words: this.task, done: false });
+              this.task = "";
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

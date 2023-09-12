@@ -1,0 +1,70 @@
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Tahoma;
+}
+
+#container {
+  width: 90%;
+  margin: 15px auto;
+  padding: 25px 10px;
+  background-color: #eee;
+  border-radius: 10px;
+  text-align: center;
+}
+#container .box {
+  width: 90%;
+  margin: auto;
+}
+#container .box input {
+  width: 50%;
+  border-radius: 6px;
+  padding: 15px;
+  margin: auto 4px;
+  border: none;
+}
+#container .box input:focus {
+  outline: none;
+}
+#container .box .btn,
+#container .box .delAll {
+  padding: 13px 15px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+#container .box .btn {
+  background-color: black;
+}
+#container .box .delAll {
+  background-color: red;
+}
+
+#container .tasks {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px auto;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+#container .tasks span {
+  background-color: red;
+  padding: 4px 6px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+}
+#container .tasks.click {
+  background-color: #02ff0024;
+}
